@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+    <link rel="stylesheet" href="css/main.css" media="screen" title="no title" charset="utf-8">
+  </head>
+  <body>
+    <main>
+    </main>
+    <script type="text/template" id="header">
+      <div class="head_left">
+        <div class="logo">
+          <img src="assets/homer_simpsons.jpg"/>
+        </div>
+
+      <h1>homer</h1>
+    </div>
+      <!-- this is where we will put the logged in information -->
+      <a href= <%= statusPath %> id="headerLogin"><%= loginStatus %></a>
+      <div class="clear"></div>
+    </script>
+    <script type="text/template" id="homepage">
+      <h1>Homepage!</h1>
+    </script>
+    <script type="text/template" id="login">
+      <div class="login">
+        <h1>Login Page</h1>
+        <input type="text" placeholder="username@simpsons.com" class="username"/>
+        <input type="password" placeholder="Password" class="password"/>
+        <input type="submit" value="Login" class="loginSubmit"/>
+        <a href="#register">Register</a>
+      </div>
+    </script>
+    <script type="text/template" id="register">
+      <div class="register">
+        <h1>Register Page</h1>
+        <input type="text" placeholder="Email" class="email"/>
+        <input type="password" placeholder="Password" class="password"/>
+        <input type="passwordConfirm" placeholder="Confirm Password" class="passwordconfirm"/>
+        <input type="submit" value="Register" class="registername"/>
+        <a href="#login">Already have an account?</a>
+        <a href="#">Home</a>
+      </div>
+    </script>
+    <script type="text/template" id="home">
+      <% _.forEach(users[0].included, function(tweet){ %>
+      <% var id = Number(tweet.relationships.user.data.id) %>
+      <h5><%= users[0].data[id].attributes.email %></h5>
+      <p><%= tweet.attributes.body%></p>
+      <% }) %>
+      <textarea name="tweet" rows="8" cols="40"></textarea>
+      <input type="submit" name="post" class="tweet" value="Tweet!">
+    </script>
+    <script type="text/template" id="users">
+      <h1>Users Page</h1>
+
+      <% _.forEach(users[0].data, function(user){ %>
+        <div class="user">
+          <a href="#"><%=user.attributes.email%></a>
+        </div>
+      <% }) %>
+      <% if(page){ %>
+        <a href="#users/<%=page %>">Load More</a>
+      <% } %>
+    </script>
+    <script type="text/template" id="userProfile">
+      <h1>User Profile Page</h1>
+      <a href="#">Homepage</a>
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min.js"></script>
+    <script src="js/token.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

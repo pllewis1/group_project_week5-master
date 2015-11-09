@@ -1,0 +1,238 @@
+@import "../bower_components/bourbon/app/assets/stylesheets/bourbon";
+$visual-grid:true;
+@import "../bower_components/neat/app/assets/stylesheets/neat";
+
+@font-face {
+  font-family: "simpsons";
+  src: url("../simpsonfont/Simpsonfont.ttf");
+}
+
+body{
+  @include outer-container(100);
+}
+
+main{
+  @include span-columns(12);
+}
+
+  .header{
+  @include span-columns(12);
+  @include omega();
+  background: url(../assets/cloudBackground.jpg) no-repeat center center transparent;
+  background-size: cover;
+  font-family:"simpsons";
+  margin-top: 0px;
+
+    img{
+      @include span-columns(1);
+      border: 2px solid #FFC416;
+      border-radius: 50px;
+      margin-right: 48px;
+      width: 8.17215%;
+      width: 100%;
+    }
+    .logo{
+      display: inline-block;
+      vertical-align: middle;
+      width: 86px;
+    }
+    h1{
+      // @include omega();
+      // @include fill-parent;
+      display:inline-block;
+      color: #FFC416;
+      line-height: 55px;
+      margin-left: 30px;
+    }
+    #headerLogin{
+      float:right;
+      padding-top: 38px;
+      margin-right: 177px;
+      text-decoration: none;
+      color:#FFC416;
+      font-size: 30px;
+    }
+  }
+    .head_left{
+      float:left;
+      width: 25%;
+      margin-left: 176px;
+      margin-top: 12px;
+      margin-bottom: 12px;
+    }
+    .clear{
+      clear:both;
+      display:block;
+    }
+
+    h1{
+      margin:0 auto;
+    }
+
+//login page//
+
+ .login{
+  @include span-columns(12);
+  background-color: #FDD43D;
+  border-top: 2px solid #207EBE;
+  height: 100vh;
+  h1{
+    margin-top: 20px;
+    font-family: "simpsons";
+    text-align: center;
+    color: #207EBE;
+    margin-bottom:20px;
+  }
+  .username{
+    display: block;
+    width: 237px;
+    margin: 0 auto;
+    padding-left: 10px;
+    height: 30px;
+    font-size: 12px;
+    border-style: none;
+    border: 1px dashed #F5A2AD;
+    margin-bottom: 10px;
+    }
+  .password{
+    display:block;
+    width: 237px;
+    margin: 0 auto;
+    padding-left: 10px;
+    height: 30px;
+    font-size: 12px;
+    border-style: none;
+    border: 1px dashed #F5A2AD;
+    margin-bottom:20px;
+  }
+  .loginSubmit{
+    width: 73px;
+    margin-top: 20px;
+    text-decoration: none;
+    border-radius: 6px;
+    border: 2px dashed #207EBE;
+    background-color: #F5A2AD;
+    display:block;
+    margin: 0 auto;
+    margin-bottom:20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: #fff;
+  }
+  a{
+    width: 90px;
+    margin-top: 20px;
+    text-decoration: none;
+    border-radius: 6px;
+    border: 2px dashed #207EBE;
+    background-color: #F5A2AD;
+    display:block;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 18px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #fff;
+  }
+}
+
+//register//
+
+.register{
+ @include span-columns(12);
+ background-color: #FDD43D;
+ border-top: 2px solid #207EBE;
+ height: 100vh;
+ h1{
+   margin-top: 20px;
+   font-family: "simpsons";
+   text-align: center;
+   color: #207EBE;
+   margin-bottom:20px;
+ }
+ .email{
+   display: block;
+   width: 237px;
+   margin: 0 auto;
+   padding-left: 10px;
+   height: 30px;
+   font-size: 12px;
+   border-style: none;
+   border: 1px dashed #F5A2AD;
+   margin-bottom: 10px;
+   }
+ .password{
+   display:block;
+   width: 237px;
+   margin: 0 auto;
+   padding-left: 10px;
+   height: 30px;
+   font-size: 12px;
+   border-style: none;
+   border: 1px dashed #F5A2AD;
+   margin-bottom:10px;
+ }
+ .passwordconfirm{
+   display:block;
+   width: 237px;
+   margin: 0 auto;
+   padding-left: 10px;
+   height: 30px;
+   font-size: 12px;
+   border-style: none;
+   border: 1px dashed #F5A2AD;
+   margin-bottom:20px;
+ }
+ .registername{
+   width: 221px;
+   margin-top: 40px;
+   text-decoration: none;
+   border-radius: 6px;
+   border: 2px dashed #207EBE;
+   background-color: #F5A2AD;
+   display:block;
+   margin: 0 auto;
+   font-size:15px;
+   margin-bottom:20px;
+   padding-top: 10px;
+   padding-bottom: 10px;
+   color: #fff;
+   &:hover {
+     color: #207EBE;
+   }
+ }
+ .loginSubmit{
+   width: 221px;
+   margin-top: 20px;
+   text-decoration: none;
+   border-radius: 6px;
+   border: 2px dashed #207EBE;
+   background-color: #F5A2AD;
+   display:block;
+   margin: 0 auto;
+   font-size:15px;
+   margin-bottom:20px;
+   padding-top: 5px;
+   padding-bottom: 5px;
+   color: #fff;
+ }
+ a{
+   width: 221px;
+   margin-top: 20px;
+   text-decoration: none;
+   border-radius: 6px;
+   border: 2px dashed #207EBE;
+   background-color: #F5A2AD;
+   display:block;
+   margin: 0 auto;
+   margin-bottom: 20px;
+   text-align: center;
+   font-size: 15px;
+   padding-top: 10px;
+   padding-bottom: 10px;
+   color: #fff;
+   &:hover {
+     color: #207EBE;
+   }
+ }
+}
