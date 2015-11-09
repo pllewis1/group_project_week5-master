@@ -17,7 +17,7 @@ var LoginCollection = Backbone.Collection.extend({
 
 var TweetCollection = Backbone.Collection.extend({
   url: "https://twitter-pi.herokuapp.com/tweets"
-})
+});
 
 var HeaderView = Backbone.View.extend({
   template: _.template($("#header").html()),
@@ -115,6 +115,10 @@ var LoginView = Backbone.View.extend({
 var RegisterView = Backbone.View.extend({
   template: _.template($("#register").html()),
 
+  events: {
+      "click .registername" : "collectRegistration"
+  },
+
   render: function(){
     this.$el.html(this.template());
     return this;
@@ -126,24 +130,26 @@ var RegisterView = Backbone.View.extend({
     var passtest = $('.passwordconfirm').val();
     if( password != passtest ){
       alert("D'oh! You're password is whack");
-      $('.password').val() = ('');
-      $('.passwordconfirm').val = ('');
+      $('.password').val('');
+      $('.passwordconfirm').val('');
     }
     else {
-        var registrationCollection = new RegistrationCollection();
-        registrationCollection.create({ "user" :{}
-            "email": email;
-            "password": password
-            // collection.create({"user":{
-            //   "email": "yolo@swag.com",
-            //   "password": "doh",
-            //   "avatar": null
-            // }});
+        var registrationCollection = new UsersCollection();
+        registrationCollection.create({ "user" :{
+            "email": email,
+            "password": password,
+            "avatar": null
+          }});
+        router.navigate("login", {trigger: true});
   }
+}
 });
+
 
 var HomeView = Backbone.View.extend({
   template: _.template($("#home").html()),
+
+    tagName: "li",
 
   events: {"click .tweet" : "post"},
 

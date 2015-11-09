@@ -236,3 +236,15 @@ main{
    }
  }
 }
+
+
+h5 {
+  @include span-columns(4);
+  background: #F5A2AD;
+}
+p {
+  border: 2px solid #207EBE;
+  border-radius: 6px;
+  margin-top: 20px;
+  clear: both;
+}
